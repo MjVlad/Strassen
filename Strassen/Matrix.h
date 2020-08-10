@@ -6,8 +6,9 @@ class Matrix {
 private:
 	vector<vector<double>> mat1;
 public:
+	Matrix();
 	Matrix(unsigned int a);
-	void set();
+	void set(double val = 1);
 	void print();
 	int stroke();
 	void knife();
@@ -19,7 +20,7 @@ public:
 	void link(Matrix& m11, Matrix& m12, Matrix& m21, Matrix& m22);
 	Matrix fin_cut(int size);
 	friend Matrix operator*(Matrix& l, Matrix& r);
-	friend Matrix multiStrassen(Matrix l, Matrix r);
+	friend Matrix multiStrassen(Matrix l, Matrix r, int mlt_thread);
 };
 
 Matrix operator+(Matrix l, Matrix r);
